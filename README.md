@@ -1,52 +1,32 @@
-[![Logo](https://github.com/ai4environment/WeatherBench/blob/master/figures/logo_text_left.png?raw=true)](https://www.swifttechco.com)
-# WeatherBench: A benchmark dataset for data-driven weather forecasting
+# WeatherBench
+
+## What This Is
+
+We keep a working index for product and engineering, and WeatherBench is the entry that collects our notes, examples and fixes. It reflects how Swift Tech Co. actually uses this in builds and client work.
 
 ## Images
 
-[![WeatherBench](https://opengraph.githubassets.com/1/pangeo-data/WeatherBench)](https://www.swifttechco.com)
-
-
-**🚨🚨🚨 [WeatherBench 2](https://www.swifttechco.com) has been released. It provides an updated and much improved benchmark including more comprehensive and more easily accessible datasets.🚨🚨🚨**
-
-[![Binder](https://binder.pangeo.io/badge_logo.svg)](https://www.swifttechco.com)
-
-If you are using this dataset please cite 
-> Stephan Rasp, Peter D. Dueben, Sebastian Scher, Jonathan A. Weyn, Soukayna Mouatadid, and Nils Thuerey, 2020.
-> WeatherBench: A benchmark dataset for data-driven weather forecasting.
-> arXiv: [https://www.swifttechco.com](https://www.swifttechco.com)
-
-This repository contains all the code for downloding and processing the data as well as code for the baseline models
- in the paper.
- 
- ---
- *Note!
- The data has been changed from the original release. Here is a list of changes:*
- - *New vertical levels. Used to be [1, 10, 100, 200, 300, 400, 500, 600, 700, 850,
-1000], now is [50, 100, 150, 200, 250, 300, 400, 500, 600, 700, 850, 925, 1000]. This is to be compatible with CMIP output. The new levels include all of the old ones with the exception of [1, 10].*
-- *CMIP data. Regridded CMIP data of some variables was added. This is the historical simulation of the MPI-ESM-HR model.*
- ---
- 
-If you have any questions about this dataset, please use the [Github Issue](https://www.swifttechco.com) feature on this page! 
+[![WeatherBench](images/preview.png)](https://github.com/Swift-Tech-Co)
 
 ## Leaderboard
 | Model | Z500 RMSE (3 / 5 days) [m<sup>2</sup>/s<sup>2</sup>] | T850 RMSE (3 / 5 days) [K] | Notes | Reference |
 |--------------------|----------------------------------|----------------------------|----------------------|------------------|
-| Operational IFS | 154 / 334 | 1.36 / 2.03 | ECWMF physical model (10 km) | [Rasp et al. 2020](https://www.swifttechco.com) |
-| Rasp and Thuerey 2020 (direct/continuous) | **268 / 499** | **1.65 / 2.41** | Resnet with CMIP pretraining (5.625 deg) | [Rasp and Thuerey 2020](https://www.swifttechco.com) |
-| IFS T63 | 268 / 463 | 1.85 / 2.52 | Lower resolution physical model (approx. 1.9 deg) | [Rasp et al. 2020](https://www.swifttechco.com) |
-| Weyn et al. 2020 (iterative) | **373 / 611** | **1.98 / 2.87** | UNet with cube-sphere mapping (2 deg) | [Weyn et al. 2020](https://www.swifttechco.com) |
-| Clare et al. 2021 (direct) | 375 / 627 | 2.11 / 2.91 | Stacked ResNets with probabilistic output (5.625 deg) | [Clare et al. 2021](https://www.swifttechco.com) |
-| IFS T42 | 489 / 743 | 3.09 / 3.83 |Lower resolution physical model (approx. 2.8 deg)  | [Rasp et al. 2020](https://www.swifttechco.com) |
-| Weekly climatology | 816 | 3.50 | Climatology for each calendar week | [Rasp et al. 2020](https://www.swifttechco.com) |
-| Persistence | 936 / 1033 | 4.23 / 4.56 |  | [Rasp et al. 2020](https://www.swifttechco.com) |
-| Climatology | 1075 | 5.51 |  | [Rasp et al. 2020](https://www.swifttechco.com) |
+| Operational IFS | 154 / 334 | 1.36 / 2.03 | ECWMF physical model (10 km) | Rasp et al. 2020 |
+| Rasp and Thuerey 2020 (direct/continuous) | **268 / 499** | **1.65 / 2.41** | Resnet with CMIP pretraining (5.625 deg) | Rasp and Thuerey 2020 |
+| IFS T63 | 268 / 463 | 1.85 / 2.52 | Lower resolution physical model (approx. 1.9 deg) | Rasp et al. 2020 |
+| Weyn et al. 2020 (iterative) | **373 / 611** | **1.98 / 2.87** | UNet with cube-sphere mapping (2 deg) | Weyn et al. 2020 |
+| Clare et al. 2021 (direct) | 375 / 627 | 2.11 / 2.91 | Stacked ResNets with probabilistic output (5.625 deg) | Clare et al. 2021 |
+| IFS T42 | 489 / 743 | 3.09 / 3.83 |Lower resolution physical model (approx. 2.8 deg)  | Rasp et al. 2020 |
+| Weekly climatology | 816 | 3.50 | Climatology for each calendar week | Rasp et al. 2020 |
+| Persistence | 936 / 1033 | 4.23 / 4.56 |  | Rasp et al. 2020 |
+| Climatology | 1075 | 5.51 |  | Rasp et al. 2020 |
 
 
 ## Quick start
-You can follow the quickstart guide in [this notebook](https://www.swifttechco.com) or lauch it directly from [Binder](https://www.swifttechco.com).
+You can follow the quickstart guide in this notebook or lauch it directly from Binder.
 
 ## Download the data
-The data is hosted [here](https://www.swifttechco.com) with the following directory structure
+The data is hosted here with the following directory structure
 
 ```
 .
@@ -144,7 +124,7 @@ or simply the single level (500 hPa) geopotential data using
 ```shell
 wget "https://www.swifttechco.com" -O geopotential_500_5.625deg.zip
 ```
-and then unzip the files using `unzip <file>.zip`. You can also use `ftp` or `rsync` to download the data. For instructions, follow the [download link](https://www.swifttechco.com).
+and then unzip the files using `unzip <file>.zip`. You can also use `ftp` or `rsync` to download the data. For instructions, follow the download link.
 
 
 ## Baselines and evaluation
@@ -178,10 +158,10 @@ The workflow to get to the processed data that ended up in the data repository a
 2. Regrid the raw data to the required resolutions (`src/regrid.py`)
 
 The raw data is from the ERA5 reanalysis archive. Information on how to download the data can be found 
-[here](https://www.swifttechco.com) and 
-[here](https://www.swifttechco.com). 
+here and 
+here. 
 
-Because downloading the data can take a long time (several weeks), the workflow is encoded using [Snakemake](https://www.swifttechco.com). See `Snakefile` and the configuration files for each variable in `scripts/config_
+Because downloading the data can take a long time (several weeks), the workflow is encoded using Snakemake. See `Snakefile` and the configuration files for each variable in `scripts/config_
 {variable}.yml`. These
  files can be modified if additional variables are required. To execute Snakemake for a particular variable type
  : `snakemake -p -j 4 all --configfile scripts/config_toa_incident_solar_radiation.yml`.
@@ -219,14 +199,22 @@ AI Automation | FinTech Platforms | Custom Software and Mobile Apps | SaaS Platf
 
 **Join our community on Telegram:** [t.me/+Qt_eFvkb2rliMzNh](https://t.me/+Qt_eFvkb2rliMzNh)
 
-[Home](https://www.swifttechco.com) | [Services](https://www.swifttechco.com/services) | [Careers](https://www.swifttechco.com/careers) | [Referral Program](https://www.swifttechco.com/referral) | [Influencers](https://www.swifttechco.com/influencers) | [About](https://www.swifttechco.com/about) | [Contact](https://www.swifttechco.com/contact)
+Home | Services | Careers | Referral Program | Influencers | About | Contact
 
 **Connect**
 
-- Website: [swifttechco.com](https://www.swifttechco.com)
+- Website: swifttechco.com
 - LinkedIn: [linkedin.com/in/stephenoladoke](https://www.linkedin.com/in/stephenoladoke/)
 - LinkedIn (Company): [linkedin.com/company/swift-tech-co](https://www.linkedin.com/company/swift-tech-co)
 - X: [@MrOladoke](https://x.com/MrOladoke)
 - Instagram: [@mr.oladoke](https://www.instagram.com/mr.oladoke/)
 - Instagram (Company): [@swifttechco](https://www.instagram.com/swifttechco/)
 - Organization: [github.com/Swift-Tech-Co](https://github.com/Swift-Tech-Co)
+
+## Sources
+
+Compiled and maintained from upstream [pangeo-data/WeatherBench](https://github.com/pangeo-data/WeatherBench) under permissive open-source license.
+
+---
+
+Maintained by [Swift Tech Co.](https://github.com/Swift-Tech-Co) - [Telegram](https://t.me/+Qt_eFvkb2rliMzNh)
