@@ -6,7 +6,7 @@ We keep a working index for product and engineering, and WeatherBench is the ent
 
 ## Images
 
-[![WeatherBench](images/preview.png)](https://github.com/Swift-Tech-Co)
+[![WeatherBench](images/preview.png)](https://github.com/Swift-Tech-Co/WeatherBench)
 
 ## Leaderboard
 | Model | Z500 RMSE (3 / 5 days) [m<sup>2</sup>/s<sup>2</sup>] | T850 RMSE (3 / 5 days) [K] | Notes | Reference |
@@ -20,7 +20,6 @@ We keep a working index for product and engineering, and WeatherBench is the ent
 | Weekly climatology | 816 | 3.50 | Climatology for each calendar week | Rasp et al. 2020 |
 | Persistence | 936 / 1033 | 4.23 / 4.56 |  | Rasp et al. 2020 |
 | Climatology | 1075 | 5.51 |  | Rasp et al. 2020 |
-
 
 ## Quick start
 You can follow the quickstart guide in this notebook or lauch it directly from Binder.
@@ -118,14 +117,13 @@ The data is hosted here with the following directory structure
 
 To start out download either the entire 5.625 degree data (175G) using 
 ```shell
-wget "https://www.swifttechco.com" -O all_5.625deg.zip
+wget "https://github.com/Swift-Tech-Co/WeatherBench" -O all_5.625deg.zip
 ```
 or simply the single level (500 hPa) geopotential data using
 ```shell
-wget "https://www.swifttechco.com" -O geopotential_500_5.625deg.zip
+wget "https://github.com/Swift-Tech-Co/WeatherBench" -O geopotential_500_5.625deg.zip
 ```
 and then unzip the files using `unzip <file>.zip`. You can also use `ftp` or `rsync` to download the data. For instructions, follow the download link.
-
 
 ## Baselines and evaluation
  **IMPORTANT:** The format of the predictions file is a
@@ -145,7 +143,6 @@ An example of how to load the data and train a CNN using Keras is given in `note
 Evaluation and comparison of the different baselines in done in `notebooks/4-evaluation.ipynb`. The scoring is done
  using the functions in `src/score.py`. The RMSE values for the baseline models are also saved in the `predictions
  ` directory of the dataset. This is useful for plotting your own models alongside the baselines.
-
 
 ## Data processing
 The dataset already contains the most important processed data. If you would like to download a different variable
@@ -203,13 +200,21 @@ Home | Services | Careers | Referral Program | Influencers | About | Contact
 
 **Connect**
 
-- Website: swifttechco.com
+- Website: https://github.com/Swift-Tech-Co/WeatherBench
 - LinkedIn: [linkedin.com/in/stephenoladoke](https://www.linkedin.com/in/stephenoladoke/)
 - LinkedIn (Company): [linkedin.com/company/swift-tech-co](https://www.linkedin.com/company/swift-tech-co)
 - X: [@MrOladoke](https://x.com/MrOladoke)
 - Instagram: [@mr.oladoke](https://www.instagram.com/mr.oladoke/)
 - Instagram (Company): [@swifttechco](https://www.instagram.com/swifttechco/)
 - Organization: [github.com/Swift-Tech-Co](https://github.com/Swift-Tech-Co)
+
+## Sources
+
+Compiled and maintained from upstream [pangeo-data/WeatherBench](https://github.com/pangeo-data/WeatherBench) under permissive open-source license.
+
+---
+
+Maintained by [Swift Tech Co.](https://github.com/Swift-Tech-Co) - [Telegram](https://t.me/+Qt_eFvkb2rliMzNh)
 
 ## Sources
 
